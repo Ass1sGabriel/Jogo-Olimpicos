@@ -1,0 +1,193 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "tema": "Deuses",
+      "dificuldade": 1,
+      "pergunta": "Quem é o rei dos deuses no Olimpo?",
+      "opcoes": ["Zeus", "Poseidon", "Hades", "Apolo"],
+      "respostaCorreta": 0,
+      "explicacao": "Zeus é o rei dos deuses e governa o Olimpo, sendo o deus do céu e do trovão."
+    },
+    {
+      "id": 2,
+      "tema": "Deuses",
+      "dificuldade": 2,
+      "pergunta": "Qual deusa nasceu da cabeça de Zeus?",
+      "opcoes": ["Afrodite", "Atena", "Ártemis", "Hera"],
+      "respostaCorreta": 1,
+      "explicacao": "Atena, deusa da sabedoria e da guerra estratégica, nasceu totalmente armada da cabeça de Zeus."
+    },
+    {
+      "id": 3,
+      "tema": "Deuses",
+      "dificuldade": 3,
+      "pergunta": "Qual é o nome romano de Hermes?",
+      "opcoes": ["Mercúrio", "Marte", "Vulcano", "Netuno"],
+      "respostaCorreta": 0,
+      "explicacao": "Hermes, mensageiro dos deuses, é conhecido como Mercúrio na mitologia romana."
+    },
+    {
+      "id": 4,
+      "tema": "Heróis",
+      "dificuldade": 1,
+      "pergunta": "Quem matou a Medusa?",
+      "opcoes": ["Teseu", "Perseus", "Hércules", "Aquiles"],
+      "respostaCorreta": 1,
+      "explicacao": "Perseus cortou a cabeça da Medusa usando um escudo espelhado para não olhar diretamente para ela."
+    },
+    {
+      "id": 5,
+      "tema": "Heróis",
+      "dificuldade": 2,
+      "pergunta": "Quantos trabalhos Hércules teve que realizar?",
+      "opcoes": ["10", "12", "15", "20"],
+      "respostaCorreta": 1,
+      "explicacao": "Hércules realizou 12 trabalhos como penitência por ter matado sua família em um acesso de loucura."
+    },
+    {
+      "id": 6,
+      "tema": "Heróis",
+      "dificuldade": 3,
+      "pergunta": "Qual herói tinha o calcanhar como único ponto vulnerável?",
+      "opcoes": ["Aquiles", "Heitor", "Paris", "Menelau"],
+      "respostaCorreta": 0,
+      "explicacao": "Aquiles foi mergulhado no rio Estige por sua mãe, mas ela o segurou pelo calcanhar, deixando essa parte vulnerável."
+    },
+    {
+      "id": 7,
+      "tema": "Criaturas",
+      "dificuldade": 1,
+      "pergunta": "Que criatura tinha corpo de leão, cabeça de mulher e asas de águia?",
+      "opcoes": ["Hidra", "Esfinge", "Quimera", "Hárpia"],
+      "respostaCorreta": 1,
+      "explicacao": "A Esfinge propunha enigmas aos viajantes e devorava quem errasse a resposta."
+    },
+    {
+      "id": 8,
+      "tema": "Criaturas",
+      "dificuldade": 2,
+      "pergunta": "Quantas cabeças tinha a Hidra de Lerna?",
+      "opcoes": ["3", "7", "9", "Variava conforme cortavam"],
+      "respostaCorreta": 3,
+      "explicacao": "A Hidra regenerava duas cabeças para cada uma cortada, até Hércules cauterizar os pescoços."
+    },
+    {
+      "id": 9,
+      "tema": "Criaturas",
+      "dificuldade": 3,
+      "pergunta": "Qual criatura era meio homem, meio touro e vivia no labirinto de Creta?",
+      "opcoes": ["Centauro", "Sátiro", "Minotauro", "Ciclope"],
+      "respostaCorreta": 2,
+      "explicacao": "O Minotauro foi criado como punição de Poseidon e vivia no labirinto construído por Dédalo."
+    },
+    {
+      "id": 10,
+      "tema": "Ilíada",
+      "dificuldade": 1,
+      "pergunta": "Qual cidade foi sitiada na Guerra de Troia?",
+      "opcoes": ["Atenas", "Esparta", "Troia", "Tebas"],
+      "respostaCorreta": 2,
+      "explicacao": "Troia foi sitiada pelos gregos por dez anos na famosa Guerra de Troia narrada na Ilíada."
+    },
+    {
+      "id": 11,
+      "tema": "Ilíada",
+      "dificuldade": 2,
+      "pergunta": "Quem era o maior guerreiro troiano?",
+      "opcoes": ["Paris", "Heitor", "Enéias", "Príamo"],
+      "respostaCorreta": 1,
+      "explicacao": "Heitor era o príncipe troiano e maior defensor de Troia, morto por Aquiles."
+    },
+    {
+      "id": 12,
+      "tema": "Ilíada",
+      "dificuldade": 3,
+      "pergunta": "O que causou a ira de Aquiles no início da Ilíada?",
+      "opcoes": ["Morte de Pátroclo", "Rapto de Helena", "Agamêmnon tomou Briseida", "Insulto de Paris"],
+      "respostaCorreta": 2,
+      "explicacao": "Agamêmnon tomou Briseida, escrava de guerra de Aquiles, causando sua ira e retirada da batalha."
+    },
+    {
+      "id": 13,
+      "tema": "Odisseia",
+      "dificuldade": 1,
+      "pergunta": "Quem é o protagonista da Odisseia?",
+      "opcoes": ["Aquiles", "Heitor", "Ulisses", "Menelau"],
+      "respostaCorreta": 2,
+      "explicacao": "Ulisses (Odisseu) é o herói que tenta retornar para casa após a Guerra de Troia."
+    },
+    {
+      "id": 14,
+      "tema": "Odisseia",
+      "dificuldade": 2,
+      "pergunta": "Quantos anos Ulisses levou para retornar a Ítaca?",
+      "opcoes": ["5", "10", "15", "20"],
+      "respostaCorreta": 3,
+      "explicacao": "Ulisses levou 20 anos para retornar: 10 na guerra de Troia e 10 na viagem de volta."
+    },
+    {
+      "id": 15,
+      "tema": "Odisseia",
+      "dificuldade": 3,
+      "pergunta": "Como Ulisses escapou do ciclope Polifemo?",
+      "opcoes": ["Lutando", "Se escondendo sob ovelhas", "Voando", "Usando magia"],
+      "respostaCorreta": 1,
+      "explicacao": "Ulisses e seus homens se esconderam sob as ovelhas de Polifemo para escapar da caverna."
+    },
+    {
+      "id": 16,
+      "tema": "Titãs",
+      "dificuldade": 1,
+      "pergunta": "Quem foi o líder dos Titãs?",
+      "opcoes": ["Cronos", "Atlas", "Prometeu", "Oceano"],
+      "respostaCorreta": 0,
+      "explicacao": "Cronos foi o líder dos Titãs e pai de Zeus, que o destituiu do poder."
+    },
+    {
+      "id": 17,
+      "tema": "Titãs",
+      "dificuldade": 2,
+      "pergunta": "Qual Titã roubou o fogo dos deuses para dar aos humanos?",
+      "opcoes": ["Atlas", "Prometeu", "Epimeteu", "Cronos"],
+      "respostaCorreta": 1,
+      "explicacao": "Prometeu roubou o fogo sagrado do Olimpo e o deu aos humanos, sendo punido por Zeus."
+    },
+    {
+      "id": 18,
+      "tema": "Titãs",
+      "dificuldade": 3,
+      "pergunta": "Qual foi a punição de Atlas?",
+      "opcoes": ["Ficar acorrentado", "Sustentar o céu", "Ser devorado por águia", "Ficar no Tártaro"],
+      "respostaCorreta": 1,
+      "explicacao": "Atlas foi condenado a sustentar o céu nas costas por toda a eternidade."
+    },
+    {
+      "id": 19,
+      "tema": "Mitos",
+      "dificuldade": 1,
+      "pergunta": "Quem abriu a caixa que liberou todos os males do mundo?",
+      "opcoes": ["Helena", "Pandora", "Cassandra", "Penélope"],
+      "respostaCorreta": 1,
+      "explicacao": "Pandora abriu a caixa (na verdade um jarro) liberando todos os males, restando apenas a esperança."
+    },
+    {
+      "id": 20,
+      "tema": "Mitos",
+      "dificuldade": 2,
+      "pergunta": "O que aconteceu com Ícaro quando voou muito alto?",
+      "opcoes": ["Caiu no mar", "Foi atingido por raio", "Perdeu-se nas nuvens", "Foi capturado"],
+      "respostaCorreta": 0,
+      "explicacao": "Ícaro voou muito perto do sol, a cera de suas asas derreteu e ele caiu no mar."
+    },
+    {
+      "id": 21,
+      "tema": "Mitos",
+      "dificuldade": 3,
+      "pergunta": "Qual rei foi condenado a empurrar uma pedra eternamente?",
+      "opcoes": ["Tântalo", "Sísifo", "Ixíon", "Prometeu"],
+      "respostaCorreta": 1,
+      "explicacao": "Sísifo foi condenado a empurrar uma pedra montanha acima eternamente, pois ela sempre rolava de volta."
+    }
+  ]
+}
