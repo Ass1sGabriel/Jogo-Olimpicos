@@ -98,67 +98,71 @@ export default function VictoryModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl mx-auto bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 border-4 border-yellow-400">
+      <DialogContent className="w-[95vw] max-w-4xl max-h-[90vh] overflow-y-auto mx-auto bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 border-4 border-yellow-400 p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-center text-3xl font-bold text-amber-900 mb-4">🏆 VITÓRIA ÉPICA! 🏆</DialogTitle>
+          <DialogTitle className="text-center text-2xl sm:text-3xl font-bold text-amber-900 mb-4">
+            🏆 VITÓRIA ÉPICA! 🏆
+          </DialogTitle>
         </DialogHeader>
 
-        <div className="text-center space-y-6">
+        <div className="text-center space-y-4 sm:space-y-6">
           {/* Winner Celebration */}
           <div className={`relative ${showCelebration ? "animate-bounce" : ""}`}>
-            <div className="mx-auto w-24 h-24 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center shadow-2xl border-4 border-yellow-300">
-              <div className="text-4xl">{winner.icon}</div>
-              <Crown className="absolute -top-2 -right-2 w-8 h-8 text-yellow-600" />
+            <div className="mx-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center shadow-2xl border-4 border-yellow-300">
+              <div className="text-3xl sm:text-4xl">{winner.icon}</div>
+              <Crown className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 text-yellow-600" />
             </div>
 
             {showCelebration && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <Sparkles className="absolute -top-4 -left-4 w-6 h-6 text-yellow-500 animate-pulse" />
-                <Star className="absolute -top-2 right-2 w-4 h-4 text-amber-500 animate-pulse" />
-                <Sparkles className="absolute -bottom-2 -right-4 w-5 h-5 text-yellow-600 animate-pulse" />
-                <Star className="absolute bottom-0 -left-2 w-3 h-3 text-amber-400 animate-pulse" />
+                <Sparkles className="absolute -top-4 -left-4 w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 animate-pulse" />
+                <Star className="absolute -top-2 right-2 w-3 h-3 sm:w-4 sm:h-4 text-amber-500 animate-pulse" />
+                <Sparkles className="absolute -bottom-2 -right-4 w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 animate-pulse" />
+                <Star className="absolute bottom-0 -left-2 w-2 h-2 sm:w-3 sm:h-3 text-amber-400 animate-pulse" />
               </div>
             )}
           </div>
 
           {/* Winner Name and Title */}
           <div>
-            <h2 className="text-2xl font-bold text-amber-900 mb-2">{winner.customName || winner.name}</h2>
-            <Badge className="text-lg px-4 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-amber-900 border-yellow-600">
+            <h2 className="text-xl sm:text-2xl font-bold text-amber-900 mb-2">{winner.customName || winner.name}</h2>
+            <Badge className="text-sm sm:text-lg px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-amber-900 border-yellow-600">
               🏛️ Herói do Olimpo 🏛️
             </Badge>
           </div>
 
           {/* Victory Message */}
-          <div className="bg-white/80 rounded-lg p-6 border-2 border-yellow-300">
-            <h3 className="text-xl font-bold text-amber-800 mb-3">{getVictoryMessage()}</h3>
-            <p className="text-amber-700 leading-relaxed">{getVictoryDescription()}</p>
+          <div className="bg-white/80 rounded-lg p-4 sm:p-6 border-2 border-yellow-300">
+            <h3 className="text-lg sm:text-xl font-bold text-amber-800 mb-3">{getVictoryMessage()}</h3>
+            <p className="text-sm sm:text-base text-amber-700 leading-relaxed">{getVictoryDescription()}</p>
           </div>
 
           {/* Winner's Artifacts */}
-          <div className="bg-gradient-to-r from-amber-100 to-yellow-100 rounded-lg p-4 border-2 border-amber-300">
-            <h4 className="font-bold text-amber-900 mb-3">Artefatos Coletados:</h4>
-            <div className="flex justify-center gap-2 flex-wrap">
+          <div className="bg-gradient-to-r from-amber-100 to-yellow-100 rounded-lg p-3 sm:p-4 border-2 border-amber-300">
+            <h4 className="font-bold text-amber-900 mb-3 text-sm sm:text-base">Artefatos Coletados:</h4>
+            <div className="flex justify-center gap-1 sm:gap-2 flex-wrap">
               {winner.artifacts.map((artifact, idx) => (
                 <div
                   key={idx}
-                  className="w-12 h-12 bg-amber-200 border-2 border-amber-400 rounded-lg flex items-center justify-center text-2xl"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-amber-200 border-2 border-amber-400 rounded-lg flex items-center justify-center text-lg sm:text-2xl"
                   title={artifact}
                 >
                   {ARTIFACTS[artifact]}
                 </div>
               ))}
-              {winner.artifacts.length === 0 && <p className="text-amber-600 italic">Nenhum artefato coletado</p>}
+              {winner.artifacts.length === 0 && (
+                <p className="text-amber-600 italic text-sm">Nenhum artefato coletado</p>
+              )}
             </div>
-            <p className="text-sm text-amber-700 mt-2">
+            <p className="text-xs sm:text-sm text-amber-700 mt-2">
               {winner.artifacts.length}/7 artefatos • Posição final: {winner.position + 1}/60
             </p>
           </div>
 
           {/* Game Statistics */}
-          <div className="bg-white/60 rounded-lg p-4 border border-amber-200">
-            <h4 className="font-bold text-amber-900 mb-2">Estatísticas do Jogo:</h4>
-            <div className="grid grid-cols-2 gap-4 text-sm">
+          <div className="bg-white/60 rounded-lg p-3 sm:p-4 border border-amber-200">
+            <h4 className="font-bold text-amber-900 mb-2 text-sm sm:text-base">Estatísticas do Jogo:</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
               <div>
                 <span className="text-amber-700">Total de Turnos:</span>
                 <span className="font-bold text-amber-900 ml-2">{gameStats.totalTurns}</span>
@@ -171,27 +175,31 @@ export default function VictoryModal({
           </div>
 
           {/* Final Rankings */}
-          <div className="bg-white/60 rounded-lg p-4 border border-amber-200">
-            <h4 className="font-bold text-amber-900 mb-3">Classificação Final:</h4>
+          <div className="bg-white/60 rounded-lg p-3 sm:p-4 border border-amber-200">
+            <h4 className="font-bold text-amber-900 mb-3 text-sm sm:text-base">Classificação Final:</h4>
             <div className="space-y-2">
               {sortedPlayers.map((player, index) => (
                 <div
                   key={player.id}
-                  className={`flex items-center justify-between p-2 rounded ${
+                  className={`flex items-center justify-between p-2 rounded text-xs sm:text-sm ${
                     player.id === winner.id ? "bg-yellow-200 border border-yellow-400" : "bg-gray-100"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="font-bold text-lg">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <span className="font-bold text-sm sm:text-lg">
                       {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : `${index + 1}º`}
                     </span>
-                    <div className={`w-8 h-8 rounded-full ${player.bgColor} flex items-center justify-center`}>
+                    <div
+                      className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full ${player.bgColor} flex items-center justify-center text-xs sm:text-base`}
+                    >
                       {player.icon}
                     </div>
-                    <span className={`font-medium ${player.color}`}>{player.customName || player.name}</span>
+                    <span className={`font-medium ${player.color} truncate max-w-[120px] sm:max-w-none`}>
+                      {player.customName || player.name}
+                    </span>
                   </div>
-                  <div className="text-right text-sm">
-                    <div className="font-bold">{player.artifacts.length}/7 artefatos</div>
+                  <div className="text-right text-xs sm:text-sm">
+                    <div className="font-bold">{player.artifacts.length}/7</div>
                     <div className="text-gray-600">Pos. {player.position + 1}</div>
                   </div>
                 </div>
@@ -200,18 +208,18 @@ export default function VictoryModal({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-3 pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button
               onClick={onPlayAgain}
-              className="flex-1 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-3 text-lg"
+              className="flex-1 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-2 sm:py-3 text-sm sm:text-lg"
             >
-              <Trophy className="w-5 h-5 mr-2" />
+              <Trophy className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Jogar Novamente
             </Button>
             <Button
               onClick={onClose}
               variant="outline"
-              className="flex-1 border-amber-400 text-amber-700 hover:bg-amber-50 font-bold py-3 bg-transparent"
+              className="flex-1 border-amber-400 text-amber-700 hover:bg-amber-50 font-bold py-2 sm:py-3 bg-transparent text-sm sm:text-lg"
             >
               Fechar
             </Button>

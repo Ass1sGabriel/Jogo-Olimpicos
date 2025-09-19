@@ -657,13 +657,12 @@ export default function OlimpicosGame() {
 
     setGameState((prev) => ({ ...prev, isRolling: true }))
 
-    // Animate dice roll
     let rollCount = 0
     const rollInterval = setInterval(() => {
       setGameState((prev) => ({ ...prev, diceValue: Math.floor(Math.random() * 6) + 1 }))
       rollCount++
 
-      if (rollCount >= 10) {
+      if (rollCount >= 15) {
         clearInterval(rollInterval)
         const finalValue = Math.floor(Math.random() * 6) + 1
 
@@ -693,7 +692,7 @@ export default function OlimpicosGame() {
           }
         })
       }
-    }, 100)
+    }, 120) // Slightly slower interval for better visual effect
   }
 
   // Auto-trigger space action when player lands
@@ -1038,90 +1037,96 @@ export default function OlimpicosGame() {
                     onClick={rollDice}
                     disabled={gameState.isRolling || gameState.gamePhase !== "playing"}
                     size="lg"
-                    className="bg-amber-700 hover:bg-amber-800 text-white font-bold px-6 py-3"
+                    className={`bg-amber-700 hover:bg-amber-800 text-white font-bold px-6 py-3 transition-all duration-200 ${
+                      gameState.isRolling ? "animate-pulse scale-110 shadow-2xl" : "hover:scale-105"
+                    }`}
                   >
-                    <DiceIcon className="w-6 h-6 mr-2" />
-                    {gameState.isRolling ? "Rolando..." : `Rolar Dado (${gameState.diceValue})`}
+                    <div className={`flex items-center ${gameState.isRolling ? "animate-spin" : ""}`}>
+                      <DiceIcon
+                        className={`w-6 h-6 mr-2 transition-all duration-150 ${gameState.isRolling ? "animate-bounce" : ""}`}
+                      />
+                    </div>
+                    {gameState.isRolling ? "🎲 Rolando..." : `Rolar Dado (${gameState.diceValue})`}
                   </Button>
                 </div>
-              </div>
 
-              {/* Board Grid */}
-              <div className="grid grid-cols-10 gap-2 p-4 bg-amber-100/50 rounded-lg border-2 border-amber-400">
-                {boardSpaces.map((space, index) => {
-                  const playersOnSpace = gameState.players.filter((p) => p.position === index)
-                  const isCurrentPlayerSpace = currentPlayerData.position === index
+                {/* Board Grid */}
+                <div className="grid grid-cols-10 gap-2 p-4 bg-amber-100/50 rounded-lg border-2 border-amber-400">
+                  {boardSpaces.map((space, index) => {
+                    const playersOnSpace = gameState.players.filter((p) => p.position === index)
+                    const isCurrentPlayerSpace = currentPlayerData.position === index
 
-                  return (
-                    <div
-                      key={space.id}
-                      className={`
-                        relative w-12 h-12 rounded border-2 flex flex-col items-center justify-center text-xs font-bold transition-all duration-300
-                        ${
+                    return (
+                      <div
+                        key={space.id}
+                        className={`
+                          relative w-12 h-12 rounded border-2 flex flex-col items-center justify-center text-xs font-bold transition-all duration-300
+                          ${
+                            space.type === "start"
+                              ? "bg-green-200 border-green-500 text-green-800"
+                              : space.type === "finish"
+                                ? "bg-purple-200 border-purple-500 text-purple-800"
+                                : space.type === "special"
+                                  ? "bg-red-200 border-red-500 text-red-800"
+                                  : "bg-blue-200 border-blue-500 text-blue-800"
+                          }
+                          ${isCurrentPlayerSpace ? "ring-4 ring-amber-400 ring-opacity-75 scale-110" : ""}
+                        `}
+                        title={
                           space.type === "start"
-                            ? "bg-green-200 border-green-500 text-green-800"
+                            ? "Início"
                             : space.type === "finish"
-                              ? "bg-purple-200 border-purple-500 text-purple-800"
+                              ? "Monte Olimpo"
                               : space.type === "special"
-                                ? "bg-red-200 border-red-500 text-red-800"
-                                : "bg-blue-200 border-blue-500 text-blue-800"
+                                ? "Evento Especial"
+                                : space.theme
                         }
-                        ${isCurrentPlayerSpace ? "ring-4 ring-amber-400 ring-opacity-75 scale-110" : ""}
-                      `}
-                      title={
-                        space.type === "start"
-                          ? "Início"
-                          : space.type === "finish"
-                            ? "Monte Olimpo"
-                            : space.type === "special"
-                              ? "Evento Especial"
-                              : space.theme
-                      }
-                    >
-                      <span className="text-[10px] leading-none">
-                        {space.type === "start"
-                          ? "🏁"
-                          : space.type === "finish"
-                            ? "🏔️"
-                            : space.type === "special"
-                              ? "⚡"
-                              : ARTIFACTS[space.theme as keyof typeof ARTIFACTS]}
-                      </span>
-                      <span className="text-[8px] leading-none">{index + 1}</span>
+                      >
+                        <span className="text-[10px] leading-none">
+                          {space.type === "start"
+                            ? "🏁"
+                            : space.type === "finish"
+                              ? "🏔️"
+                              : space.type === "special"
+                                ? "⚡"
+                                : ARTIFACTS[space.theme as keyof typeof ARTIFACTS]}
+                        </span>
+                        <span className="text-[8px] leading-none">{index + 1}</span>
 
-                      {/* Players on this space */}
-                      {playersOnSpace.length > 0 && (
-                        <div className="absolute -top-1 -right-1 flex flex-wrap">
-                          {playersOnSpace.slice(0, 2).map((player, pIndex) => (
-                            <div
-                              key={player.id}
-                              className={`w-4 h-4 rounded-full ${player.bgColor} border border-white flex items-center justify-center text-[8px] ${
-                                pIndex > 0 ? "-ml-1" : ""
-                              }`}
-                            >
-                              {player.icon}
-                            </div>
-                          ))}
-                          {playersOnSpace.length > 2 && (
-                            <div className="w-4 h-4 rounded-full bg-gray-200 border border-white flex items-center justify-center text-[6px] -ml-1">
-                              +{playersOnSpace.length - 2}
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
-
-              {/* Action Status */}
-              {gameState.waitingForSpaceAction && (
-                <div className="mt-4 p-3 bg-amber-100 border-2 border-amber-400 rounded-lg">
-                  <p className="text-amber-800 font-medium text-center">
-                    {currentPlayerData.customName || currentPlayerData.name} está processando a ação da casa...
-                  </p>
+                        {/* Players on this space */}
+                        {playersOnSpace.length > 0 && (
+                          <div className="absolute -top-1 -right-1 flex flex-wrap">
+                            {playersOnSpace.slice(0, 2).map((player, pIndex) => (
+                              <div
+                                key={player.id}
+                                className={`w-4 h-4 rounded-full ${player.bgColor} border border-white flex items-center justify-center text-[8px] ${
+                                  pIndex > 0 ? "-ml-1" : ""
+                                }`}
+                              >
+                                {player.icon}
+                              </div>
+                            ))}
+                            {playersOnSpace.length > 2 && (
+                              <div className="w-4 h-4 rounded-full bg-gray-200 border border-white flex items-center justify-center text-[6px] -ml-1">
+                                +{playersOnSpace.length - 2}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
-              )}
+
+                {/* Action Status */}
+                {gameState.waitingForSpaceAction && (
+                  <div className="mt-4 p-3 bg-amber-100 border-2 border-amber-400 rounded-lg">
+                    <p className="text-amber-800 font-medium text-center">
+                      {currentPlayerData.customName || currentPlayerData.name} está processando a ação da casa...
+                    </p>
+                  </div>
+                )}
+              </div>
             </Card>
           </div>
         </div>

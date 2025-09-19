@@ -61,16 +61,23 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguageState] = useState<Language>("pt-br")
 
   useEffect(() => {
-    // Load saved language from localStorage
-    const savedLanguage = localStorage.getItem("olimpicos-language") as Language
-    if (savedLanguage && (savedLanguage === "pt-br" || savedLanguage === "en")) {
-      setLanguageState(savedLanguage)
+    try {
+      const savedLanguage = localStorage.getItem("olimpicos-language") as Language
+      if (savedLanguage && (savedLanguage === "pt-br" || savedLanguage === "en")) {
+        setLanguageState(savedLanguage)
+      }
+    } catch (error) {
+      console.log("[v0] localStorage not available, using default language")
     }
   }, [])
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
-    localStorage.setItem("olimpicos-language", lang)
+    try {
+      localStorage.setItem("olimpicos-language", lang)
+    } catch (error) {
+      console.log("[v0] Could not save language to localStorage")
+    }
   }
 
   const t = (key: string): string => {

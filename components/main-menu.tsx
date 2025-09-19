@@ -224,7 +224,7 @@ export function MainMenu({ onStartGame }: MainMenuProps) {
       </div>
 
       <Dialog open={showInstructions} onOpenChange={setShowInstructions}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-gradient-to-br from-amber-50 to-yellow-50 border-4 border-amber-600">
+        <DialogContent className="w-[95vw] max-w-4xl max-h-[85vh] overflow-y-auto bg-gradient-to-br from-amber-50 to-yellow-50 border-4 border-amber-600 p-4 sm:p-6">
           <DialogHeader className="relative">
             <button
               onClick={() => setShowInstructions(false)}
@@ -233,7 +233,7 @@ export function MainMenu({ onStartGame }: MainMenuProps) {
               <X className="w-4 h-4" />
             </button>
             <DialogTitle
-              className="text-3xl font-bold text-amber-900 text-center mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl font-bold text-amber-900 text-center mb-4 sm:mb-6 pr-8"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
             >
               {t("instructionsTitle")}
@@ -241,7 +241,7 @@ export function MainMenu({ onStartGame }: MainMenuProps) {
           </DialogHeader>
 
           <div
-            className="space-y-6 text-amber-900 bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-lg border-2 border-amber-300"
+            className="space-y-4 sm:space-y-6 text-amber-900 bg-gradient-to-br from-yellow-50 to-amber-50 p-4 sm:p-6 rounded-lg border-2 border-amber-300"
             style={{
               backgroundImage: `
                 radial-gradient(circle at 10% 20%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
@@ -250,13 +250,13 @@ export function MainMenu({ onStartGame }: MainMenuProps) {
             }}
           >
             <div>
-              <h3 className="text-xl font-bold mb-2 text-amber-800">{t("objective")}</h3>
-              <p className="text-base leading-relaxed">{t("objectiveText")}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-amber-800">{t("objective")}</h3>
+              <p className="text-sm sm:text-base leading-relaxed">{t("objectiveText")}</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-3 text-amber-800">{t("howToPlayTitle")}</h3>
-              <ol className="space-y-2 text-base leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-amber-800">{t("howToPlayTitle")}</h3>
+              <ol className="space-y-2 sm:space-y-3 text-sm sm:text-base leading-relaxed">
                 {[
                   "Na sua vez, clique no dado para rolá-lo.",
                   "Seu peão andará o número de casas indicado.",
@@ -264,19 +264,19 @@ export function MainMenu({ onStartGame }: MainMenuProps) {
                   "A dificuldade da pergunta aumenta conforme você coleta mais artefatos.",
                   "Cuidado com as Casas Especiais! Elas podem te ajudar ou atrapalhar.",
                 ].map((step, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                  <li key={index} className="flex gap-2 sm:gap-3">
+                    <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-amber-600 text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold">
                       {index + 1}
                     </span>
-                    <span>{step}</span>
+                    <span className="flex-1">{step}</span>
                   </li>
                 ))}
               </ol>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-2 text-amber-800">{t("victoryCondition")}</h3>
-              <p className="text-base leading-relaxed font-medium bg-amber-100 p-4 rounded-lg border-l-4 border-amber-600">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-amber-800">{t("victoryCondition")}</h3>
+              <p className="text-sm sm:text-base leading-relaxed font-medium bg-amber-100 p-3 sm:p-4 rounded-lg border-l-4 border-amber-600">
                 {t("victoryConditionText")}
               </p>
             </div>
