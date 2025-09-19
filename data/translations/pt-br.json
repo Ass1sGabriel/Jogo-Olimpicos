@@ -1,0 +1,30 @@
+{
+  "startGame": "Iniciar Jogo",
+  "howToPlay": "Como Jogar",
+  "language": "Idioma",
+  "instructionsTitle": "MANUAL DE INSTRUÇÕES - OLÍMPICOS",
+  "objective": "Objetivo:",
+  "objectiveText": "Ser o primeiro jogador a coletar 7 artefatos divinos (um de cada tema) e chegar ao final do tabuleiro no Monte Olimpo.",
+  "howToPlayTitle": "Como Jogar:",
+  "howToPlaySteps": [
+    "Na sua vez, clique no dado para rolá-lo.",
+    "Seu peão andará o número de casas indicado.",
+    "Se parar em uma casa temática, você responderá a uma pergunta. Se acertar, ganha o artefato daquele tema (se ainda não o tiver).",
+    "A dificuldade da pergunta aumenta conforme você coleta mais artefatos.",
+    "Cuidado com as Casas Especiais! Elas podem te ajudar ou atrapalhar."
+  ],
+  "victoryCondition": "Condição de Vitória:",
+  "victoryConditionText": "Após coletar os 7 artefatos, corra para ser o primeiro a chegar exatamente na casa final do tabuleiro.",
+  "close": "Fechar",
+  "gameSetup": "Configuração do Jogo",
+  "configurePlayer": "Configurar Jogadores",
+  "archetype": "Arquétipo",
+  "customName": "Nome Personalizado (Opcional)",
+  "remove": "Remover",
+  "addPlayer": "Adicionar Jogador",
+  "startGameButton": "Iniciar Jogo",
+  "turn": "Turno",
+  "round": "Rodada",
+  "restartGame": "Reiniciar Jogo",
+  "gameSettings": "Configurações do Jogo"
+}

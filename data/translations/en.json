@@ -1,0 +1,30 @@
+{
+  "startGame": "Start Game",
+  "howToPlay": "How to Play",
+  "language": "Language",
+  "instructionsTitle": "INSTRUCTION MANUAL - OLYMPICS",
+  "objective": "Objective:",
+  "objectiveText": "Be the first player to collect 7 divine artifacts (one of each theme) and reach the end of the board on Mount Olympus.",
+  "howToPlayTitle": "How to Play:",
+  "howToPlaySteps": [
+    "On your turn, click the dice to roll it.",
+    "Your pawn will move the number of spaces indicated.",
+    "If you land on a themed space, you will answer a question. If you get it right, you win the artifact of that theme (if you don't already have it).",
+    "The difficulty of the question increases as you collect more artifacts.",
+    "Watch out for Special Spaces! They can help or hinder you."
+  ],
+  "victoryCondition": "Victory Condition:",
+  "victoryConditionText": "After collecting all 7 artifacts, race to be the first to reach exactly the final space on the board.",
+  "close": "Close",
+  "gameSetup": "Game Setup",
+  "configurePlayer": "Configure Players",
+  "archetype": "Archetype",
+  "customName": "Custom Name (Optional)",
+  "remove": "Remove",
+  "addPlayer": "Add Player",
+  "startGameButton": "Start Game",
+  "turn": "Turn",
+  "round": "Round",
+  "restartGame": "Restart Game",
+  "gameSettings": "Game Settings"
+}
